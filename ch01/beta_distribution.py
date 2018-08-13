@@ -31,4 +31,4 @@ ax[1, 0].set_ylabel(r"$p(\theta)$", fontsize=14)
 
 plt.tight_layout()
 
-plt.savefig("beta_distribution.png")
+plt.savefig("plots/beta_distribution.png")

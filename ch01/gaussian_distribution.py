@@ -30,4 +30,4 @@ ax[1, 0].set_ylabel("$pdf(x)$", fontsize=16)
 
 plt.tight_layout()
 
-plt.savefig("gaussian_distribution.png")
+plt.savefig("plots/gaussian_distribution.png")

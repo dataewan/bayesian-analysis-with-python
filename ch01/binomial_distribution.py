@@ -31,4 +31,4 @@ ax[0, 0].set_xticks(x)
 
 plt.tight_layout()
 
-plt.savefig("binomial_distribution.png")
+plt.savefig("plots/binomial_distribution.png")

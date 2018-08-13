@@ -43,4 +43,4 @@ for idx, N in enumerate(trials):
 
 plt.tight_layout()
 
-plt.savefig("calculate_posterior.png")
+plt.savefig("plots/calculate_posterior.png")
