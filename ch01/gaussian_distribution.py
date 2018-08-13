@@ -3,6 +3,8 @@ import numpy as np
 from scipy import stats
 import seaborn as sns
 
+sns.set_style("whitegrid")
+
 mu_params = [-1, 0, 1]
 sd_params = [0.5, 1, 1.5]
 
