@@ -41,7 +41,7 @@ with pm.Model() as model:
     # y_pred = pm.Normal("y_pred", mu=alpha + beta * x, sd=epsilon, observed=y)
 
     start = pm.find_MAP()
-    step = pm.Metropolis()
+    step = pm.NUTS()
     trace = pm.sample(10000, step, start)
 
 chain = trace[200:]
