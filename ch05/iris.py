@@ -43,3 +43,24 @@ plt.savefig("logistic_iris_traceplot.png")
 plt.close()
 
 print(pm.summary(chain_0, varnames))
+
+
+# plot the data together with the fitted sigmoid
+
+theta = trace_0.theta.mean(axis=0)
+idx = np.argsort(x_0)
+plt.plot(x_0[idx], theta[idx], color="b", lw=3)
+plt.axvline(trace_0.bd.mean(), ymax=1, color="r")
+bd_hpd = pm.hpd(trace_0.bd)
+plt.fill_betweenx([0, 1], bd_hpd[0], bd_hpd[1], color="r", alpha=0.5)
+
+plt.plot(x_0, y_0, "o", color="k")
+theta_hpd = pm.hpd(trace_0.theta)[idx]
+plt.fill_between(x_0[idx], theta_hpd[:, 0], theta_hpd[:, 1], color="b", alpha=0.5)
+
+
+plt.xlabel(x_n)
+plt.ylabel(r"$\theta$", rotation=0)
+
+plt.savefig("logistic_iris_fit.png")
+plt.close()
