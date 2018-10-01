@@ -50,7 +50,7 @@ for n in children:
     with_camper = without_camper + chain_ZIP_reg.beta[:, 1][::thin]
 
     fish_count_pred_0.append(np.exp(without_camper))
-    fish_count_pred_1.append(np.exp(without_camper))
+    fish_count_pred_1.append(np.exp(with_camper))
 
 
 plt.plot(children, fish_count_pred_0, "bo", alpha=0.01)
@@ -63,5 +63,6 @@ plt.ylabel("Fish caught")
 
 plt.plot([], 'bo', label='without camper')
 plt.plot([], 'ro', label='with camper')
+plt.legend()
 
 plt.savefig("fish_fit.png")
